@@ -7,162 +7,45 @@ for (var close of closers) {
 }
 
 function closeBlock(e) {
-    let topLeft = document.getElementById("mdn-top-left");
-    let topCenter = document.getElementById("mdn-top-center");
+    const allOpened = document.querySelectorAll('.parent-active');
 
-    let topRight = document.getElementById("mdn-top-right");
-    let btmLeft = document.getElementById("mdn-btm-left");
-    let btmCenter = document.getElementById("mdn-btm-center");
-    let btmRight = document.getElementById("mdn-btm-right");
+    for (let single of allOpened) {
 
-    if (event.target.classList.contains('closing-op')) {
-        topCenter.classList.toggle("dd-top-left");
+        single.nextElementSibling.classList.remove('dd-top-left');
+        console.log(single);
+        single.classList.remove('parent-active');
 
-        topRight.classList.remove("dd-top-left");
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        // topCenter.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
 
-    }
-
-    if (event.target.classList.contains('closing-cr')) {
-        topLeft.classList.toggle("dd-top-left");
-
-        topRight.classList.remove("dd-top-left");
-        // topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-    }
-    if (event.target.classList.contains('closing-op')) {
-        topCenter.classList.toggle("dd-top-left");
-
-        topRight.classList.remove("dd-top-left");
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        // topCenter.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-    }
-    if (event.target.classList.contains('closing-sar')) {
-        btmLeft.classList.toggle("dd-top-left");
-
-        topRight.classList.remove("dd-top-left");
-        topLeft.classList.remove("dd-top-left");
-        // btmLeft.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-    }
-    if (event.target.classList.contains('closing-reu')) {
-        btmCenter.classList.toggle("dd-top-left");
-
-        topRight.classList.remove("dd-top-left");
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-        // btmCenter.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-    }
-    if (event.target.classList.contains('closing-tys')) {
-        btmRight.classList.toggle("dd-top-left");
-
-        topRight.classList.remove("dd-top-left");
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        // btmRight.classList.remove("dd-top-left");
     }
 }
 
 
-for (var block of blocks) {
-    block.addEventListener("click", expandBlock, true);
-}
 
-function expandBlock(event) {
-    // console.log('works!');
-    let topLeft = document.getElementById("mdn-top-left");
-    let topCenter = document.getElementById("mdn-top-center");
+document.querySelectorAll('.outer').forEach(item => {
 
-    let topRight = document.getElementById("mdn-top-right");
-    let btmLeft = document.getElementById("mdn-btm-left");
+    // Add event listener
+    item.addEventListener('click', event => {
+        const allOpened = document.querySelectorAll('.parent-active');
 
-    let btmCenter = document.getElementById("mdn-btm-center");
-    let btmRight = document.getElementById("mdn-btm-right");
+        for (let single of allOpened) {
 
-    if (event.target.classList.contains('intl-cr')) {
-        topLeft.classList.toggle("dd-top-left");
-        topRight.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
+            single.nextElementSibling.classList.remove('dd-top-left');
+            console.log(single);
+            single.classList.remove('parent-active');
+            // single.classList.value.remove('parent-active');
 
-        btmCenter.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-    }
+        }
 
-
-    if (event.target.classList.contains('intl-op')) {
-
-        topCenter.classList.toggle("dd-top-left");
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        topRight.classList.remove("dd-top-left");
-    }
-
-    if (event.target.classList.contains('intl-sra')) {
-        btmLeft.classList.toggle("dd-top-left");
-
-        topLeft.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-        topRight.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-
-    }
-    if (event.target.classList.contains('intl-ibp')) {
-
-        topRight.classList.toggle("dd-top-left");
-
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-    }
-
-    if (event.target.classList.contains('intl-reu')) {
-
-        btmCenter.classList.toggle("dd-top-left");
-
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        topRight.classList.remove("dd-top-left");
-        btmRight.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-    }
-
-
-    if (event.target.classList.contains('intl-tys')) {
-
-        btmRight.classList.toggle("dd-top-left");
-
-        topLeft.classList.remove("dd-top-left");
-        btmLeft.classList.remove("dd-top-left");
-        topRight.classList.remove("dd-top-left");
-        btmCenter.classList.remove("dd-top-left");
-        topCenter.classList.remove("dd-top-left");
-    }
+        // Toggle the dropdowns
+        var clicked = event.target.closest('.outer');
+        clicked.classList.add('parent-active');
 
 
 
+        let hiddenOuter = clicked.nextElementSibling;
+        hiddenOuter.classList.add('dd-top-left');
 
-    // Depending on the target, change dd-top-right to block
 
-}
+
+    })
+})
